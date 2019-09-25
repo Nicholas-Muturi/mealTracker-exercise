@@ -18,6 +18,17 @@ export class MealComponent implements OnInit {
     this.meals[index].showDetailsBtn = false;
   }
 
+  hideDetails(index: number){
+    this.meals[index].showDetails = false;
+    this.meals[index].showDetailsBtn = true;
+  }
+
+  mealDelete(index: number){
+    this.meals.splice(index, 1);
+  }
+
+
+
   /************************ END FUNCTIONS ************************/
 
   constructor(mealService: MealServiceService) {

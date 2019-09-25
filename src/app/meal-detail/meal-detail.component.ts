@@ -10,7 +10,7 @@ export class MealDetailComponent implements OnInit {
   
   @Input() meal: Meal;
   @Output() detailsHide = new EventEmitter();
-  @Output() deleteAll = new EventEmitter();
+  @Output() deleteMeal = new EventEmitter();
 
   /************************ START FUNCTIONS ************************/
 
@@ -21,7 +21,7 @@ export class MealDetailComponent implements OnInit {
   }
 
   mealDelete(){
-    this.deleteAll.emit();
+    this.deleteMeal.emit();
   }
 
   /************************ END FUNCTIONS ************************/

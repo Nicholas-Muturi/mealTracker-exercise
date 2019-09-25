@@ -9,7 +9,7 @@
       <div class="card" *ngFor='let meal of meals; let i = index'>
         <h4 class="text-center">{{meal.name}}</h4>
         <button *ngIf='meal.showDetailsBtn' class="btn btn-outline-dark" (click)='toggleDetails(i)'>Show Details</button>
-        <app-meal-detail [meal]='meal' *ngIf='meal.showDetails' ></app-meal-detail>
+        <app-meal-detail [meal]='meal' *ngIf='meal.showDetails' (detailsHide)='hideDetails(i)' (deleteMeal)='mealDelete(i)'></app-meal-detail>
 
       </div>
 
