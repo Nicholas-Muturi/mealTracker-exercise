@@ -1,6 +1,7 @@
 export class Meal {
     showDetails: boolean;
     showDetailsBtn: boolean;
+    showMeal: boolean;
     constructor(
         public id: number,
         public food: string,
@@ -9,5 +10,6 @@ export class Meal {
     ){
         this.showDetails = false;
         this.showDetailsBtn = true;
+        this.showMeal = true;
     }
 }

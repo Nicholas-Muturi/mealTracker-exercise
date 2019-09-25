@@ -26,7 +26,6 @@ export class MealFormComponent implements OnInit {
 
   constructor(allFilters: FilterService) {
     this.filters = allFilters.getFilters();
-    this.filterSelected = 1;
   }
 
   ngOnInit() {

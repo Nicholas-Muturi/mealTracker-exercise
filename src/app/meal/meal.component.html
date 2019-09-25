@@ -6,13 +6,14 @@
       <app-meal-form (mealAdd)='addMeal($event)' (filterEmitter)='changeListOutput($event)'></app-meal-form>
     </div>
     <div class="col-md-6">
-      <div class="card" *ngFor='let meal of meals; let i = index'>
-        <h4 class="text-center">{{meal.food}}</h4>
-        <button *ngIf='meal.showDetailsBtn' class="btn btn-outline-dark" (click)='toggleDetails(i)'>Show Details</button>
-        <app-meal-detail [meal]='meal' *ngIf='meal.showDetails' (detailsHide)='hideDetails(i)' (deleteMeal)='mealDelete(i)'></app-meal-detail>
+      <div *ngFor='let meal of meals; let i = index'>
+        <div class="card" *ngIf="meal.showMeal">
+            <h4 class="text-center">{{meal.food}}</h4>
+            <button *ngIf='meal.showDetailsBtn' class="btn btn-outline-dark" (click)='toggleDetails(i)'>Show Details</button>
+            <app-meal-detail [meal]='meal' *ngIf='meal.showDetails' (detailsHide)='hideDetails(i)' (deleteMeal)='mealDelete(i)'></app-meal-detail>
+        </div>
       </div>
     </div>
-    
   </div>
 
 </div>
