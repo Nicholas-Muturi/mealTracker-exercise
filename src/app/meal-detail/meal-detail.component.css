@@ -1,0 +1,13 @@
+.mealDetails {
+    margin: auto 10px auto 10px;
+}
+.btnDiv{
+    display: block;
+    text-align: center;
+}
+.btnDiv button {
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+}

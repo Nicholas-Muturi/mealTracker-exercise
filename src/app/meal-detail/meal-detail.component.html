@@ -1,12 +1,9 @@
-<p>Calories: {{meal.Calories}}</p>
-<p>Details: {{meal.Details}}</p>
-<div class='row'>
-    <div class="col-md-6">
-        <button class="btn btn-outline-danger">Delete</button>
-    </div>
-    <div class="col-md-6">
-        <button class="btn-outline-primary">Hide</button>
-    </div>
+
+<div class="mealDetails">
+    <p>Calories: {{meal.Calories}}</p>
+    <p>Details: {{meal.Details}}</p>
 </div>
-
-
+<div class='btnDiv'>
+  <button class="btn btn-outline-danger" (click)='mealDelete()'>Delete</button>
+  <button class="btn btn-outline-primary" (click)='hideInfo()'>Hide</button>
+</div>
