@@ -10,7 +10,7 @@ import { MealServiceService } from '../meal-service/meal-service.service';
 export class MealComponent implements OnInit {
 
   meals: Meal[];
-  
+  mealService: MealServiceService;
 
   /************************ START FUNCTIONS ************************/
 
@@ -34,8 +34,18 @@ export class MealComponent implements OnInit {
     this.meals.push(addedMeal);
   }
 
-  changeListOutput(capturedVal){
-    console.log(capturedVal);
+  changeListOutput(filterValue: number){
+    console.log(filterValue);
+    if(filterValue == 0){
+      this.mealService.showAll();
+    }
+    else if (filterValue == 1) {
+      this.mealService.moreThan500();
+    }
+    else if (filterValue == 2) {
+      this.mealService.lessThan500();
+    }
+
   }
 
 
@@ -43,6 +53,7 @@ export class MealComponent implements OnInit {
 
   constructor(mealService: MealServiceService) {
     this.meals = mealService.getMeal();
+    this.mealService = mealService;
   }
 
   ngOnInit() {
