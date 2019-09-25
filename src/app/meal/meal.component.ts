@@ -10,6 +10,7 @@ import { MealServiceService } from '../meal-service/meal-service.service';
 export class MealComponent implements OnInit {
 
   meals: Meal[];
+  
 
   /************************ START FUNCTIONS ************************/
 
@@ -27,6 +28,11 @@ export class MealComponent implements OnInit {
     this.meals.splice(index, 1);
   }
 
+  addMeal(addedMeal){
+    let arrayLength: number = this.meals.length;
+    addedMeal.id = arrayLength + 1;
+    this.meals.push(addedMeal);
+  }
 
 
   /************************ END FUNCTIONS ************************/

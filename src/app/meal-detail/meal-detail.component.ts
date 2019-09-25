@@ -13,9 +13,6 @@ export class MealDetailComponent implements OnInit {
   @Output() deleteMeal = new EventEmitter();
 
   /************************ START FUNCTIONS ************************/
-
-
-
   hideInfo(){
     this.detailsHide.emit();
   }

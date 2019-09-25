@@ -3,7 +3,7 @@ export class Meal {
     showDetailsBtn: boolean;
     constructor(
         public id: number,
-        public name: string,
+        public food: string,
         public calories: number,
         public details: string
     ){

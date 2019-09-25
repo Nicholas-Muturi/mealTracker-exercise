@@ -1,1 +1,22 @@
-<p>meal-form works!</p>
+<form (ngSubmit)='submitForm()' #mealForm = 'ngForm'>
+  <div class="form-group">
+    <label for="">Meal Name</label>
+    <input type="text" class="form-control" id="food" [(ngModel)]='newMeal.food' name="food" #food='ngModel' required>
+  </div>
+  <div class="form-group">
+    <label for="">Calories</label>
+    <input type="number" class="form-control" min='0' name='calories' [(ngModel)]='newMeal.calories' >
+  </div>
+  <div class="form-group">
+    <label for="">Details</label>
+    <textarea type="text" class="form-control" rows='4' name='details' [(ngModel)]='newMeal.details'></textarea>
+  </div>
+  <button type='submit' class="btn btn-outline-success">Submit</button>
+</form>
+
+<div id="filterDiv">
+      <h5>Filter list by</h5>
+      <select name="filters" id="filters" [(ngModel)]='filters' class='form-control'>
+        <option *ngFor='let filt of filters' [value]='filt.id' >{{filt.type}}</option>
+      </select>
+</div>

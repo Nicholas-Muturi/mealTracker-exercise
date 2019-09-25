@@ -3,17 +3,16 @@
   <hr>
   <div class="row">
     <div class="col-md-6">
-      <app-meal-form></app-meal-form>
+      <app-meal-form (mealAdd)='addMeal($event)'></app-meal-form>
     </div>
     <div class="col-md-6">
       <div class="card" *ngFor='let meal of meals; let i = index'>
-        <h4 class="text-center">{{meal.name}}</h4>
+        <h4 class="text-center">{{meal.food}}</h4>
         <button *ngIf='meal.showDetailsBtn' class="btn btn-outline-dark" (click)='toggleDetails(i)'>Show Details</button>
         <app-meal-detail [meal]='meal' *ngIf='meal.showDetails' (detailsHide)='hideDetails(i)' (deleteMeal)='mealDelete(i)'></app-meal-detail>
-
       </div>
-
     </div>
+    
   </div>
 
 </div>

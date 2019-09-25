@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Meal } from '../meal';
+import { ListFilters } from '../list-filters';
+import { FilterService } from '../filter-service/filter.service';
 
 @Component({
   selector: 'app-meal-form',
@@ -6,8 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meal-form.component.css']
 })
 export class MealFormComponent implements OnInit {
+  filters: ListFilters[];
 
-  constructor() { }
+  newMeal = new Meal(0,"",0,"");
+  @Output() mealAdd = new EventEmitter<Meal>();
+  @Output() filterValue = new EventEmitter<number>();
+
+  submitForm(){
+    this.mealAdd.emit(this.newMeal);
+  }
+
+  constructor(allFilters: FilterService) {
+    this.filters = allFilters.getFilters();
+  }
 
   ngOnInit() {
   }
