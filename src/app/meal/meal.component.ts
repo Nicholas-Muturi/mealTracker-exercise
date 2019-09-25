@@ -34,6 +34,10 @@ export class MealComponent implements OnInit {
     this.meals.push(addedMeal);
   }
 
+  changeListOutput(capturedVal){
+    console.log(capturedVal);
+  }
+
 
   /************************ END FUNCTIONS ************************/
 

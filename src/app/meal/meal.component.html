@@ -3,7 +3,7 @@
   <hr>
   <div class="row">
     <div class="col-md-6">
-      <app-meal-form (mealAdd)='addMeal($event)'></app-meal-form>
+      <app-meal-form (mealAdd)='addMeal($event)' (filterEmitter)='changeListOutput($event)'></app-meal-form>
     </div>
     <div class="col-md-6">
       <div class="card" *ngFor='let meal of meals; let i = index'>
