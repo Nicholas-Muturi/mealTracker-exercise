@@ -1,8 +1,8 @@
 <div class="container">
   <h1 class="text-center">Meal Tracker</h1>
   <hr>
-  <div class="row">
-    <div class="col-md-6">
+  <div id='form-column' class="row">
+    <div  class="col-md-6">
       <app-meal-form (mealAdd)='addMeal($event)' (filterEmitter)='changeListOutput($event)'></app-meal-form>
     </div>
     <div class="col-md-6">
